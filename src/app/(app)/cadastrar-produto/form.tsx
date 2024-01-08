@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Label } from '@radix-ui/react-label'
-import { Plus } from 'lucide-react'
+import { Plus, Undo2 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
@@ -91,9 +91,18 @@ export function ProductForm() {
         )}
       </div>
 
-      <Button type="submit" className="w-full mt-5">
-        <Plus /> Cadastrar
-      </Button>
+      <div className="flex gap-5 justify-end">
+        <Button
+          type="button"
+          variant="secondary"
+          onClick={() => router.push('/')}
+        >
+          <Undo2 className="mr-2 h-4 w-4" /> Abandonar
+        </Button>
+        <Button type="submit">
+          <Plus className="mr-2 h-4 w-4" /> Cadastrar
+        </Button>
+      </div>
     </form>
   )
 }

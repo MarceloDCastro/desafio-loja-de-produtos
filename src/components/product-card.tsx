@@ -35,7 +35,7 @@ export function ProductCard({ product }: ProductCardProps) {
       </CardContent>
       <CardFooter>
         <Button className="w-full">
-          <Plus /> Adicionar ao carrinho
+          <Plus className="mr-2 h-4 w-4" /> Adicionar ao carrinho
         </Button>
       </CardFooter>
     </Card>
