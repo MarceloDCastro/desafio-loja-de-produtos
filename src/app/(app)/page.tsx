@@ -109,7 +109,7 @@ const products: Product[] = [
 
 export default function Home() {
   return (
-    <div className="p-5 grid grid-cols-12 gap-4">
+    <div className="p-5 grid grid-cols-12 gap-10">
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}

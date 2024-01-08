@@ -21,7 +21,7 @@ export function ProductCard({ product }: ProductCardProps) {
   })
 
   return (
-    <Card className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 2xl:col-span-2 h-full flex flex-col">
+    <Card className="col-span-12 sm:col-span-6 lg:col-span-4 h-full flex flex-col">
       <CardHeader className="pb-3">
         <CardTitle className="max-h-[60px] custom-ellipsis text-xl">
           {product.name}
