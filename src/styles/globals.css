@@ -74,3 +74,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+.custom-ellipsis {
+  display: -webkit-box;
+ -webkit-line-clamp: 3;
+ overflow: hidden;
+ -webkit-box-orient: vertical; 
+}
