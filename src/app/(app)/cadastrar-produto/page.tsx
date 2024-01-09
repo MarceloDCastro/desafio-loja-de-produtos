@@ -6,8 +6,15 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { ProductForm } from './form'
+import { getServerSession } from 'next-auth'
+import { nextAuthOptions } from '@/app/api/auth/[...nextauth]/route'
+import { redirect } from 'next/navigation'
 
-export default function RegisterProduct() {
+export default async function RegisterProduct() {
+  const session = await getServerSession(nextAuthOptions)
+
+  if (!session) redirect('/')
+
   return (
     <div className="flex flex-col items-center justify-center h-[calc(100vh-128px)]">
       <Card className="w-[80vw] lg:w-[50vw] min-w-[340px] max-w-[700px] px-4 py-2">
