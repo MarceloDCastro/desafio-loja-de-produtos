@@ -19,11 +19,14 @@ export function UserArea() {
 
   const user = session?.user
 
-  return !session ? (
-    <Link href="/login">
-      <Button variant="ghost">Entrar</Button>
-    </Link>
-  ) : (
+  if (!session)
+    return (
+      <Link href="/login">
+        <Button variant="ghost">Entrar</Button>
+      </Link>
+    )
+
+  return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Avatar className="cursor-pointer">

@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { Product, useProductList } from '@/contexts/product-list'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Label } from '@radix-ui/react-label'
 import { Plus, Undo2 } from 'lucide-react'
@@ -9,6 +10,7 @@ import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
+import { v4 as uuidv4 } from 'uuid'
 
 const productFormSchema = z.object({
   name: z.string().min(3, { message: 'Nome deve ter no mínimo 3 caracteres' }),
@@ -32,14 +34,19 @@ export function ProductForm() {
     resolver: zodResolver(productFormSchema),
   })
 
+  const { addProduct } = useProductList()
+
   const router = useRouter()
 
   function onSubmit(data: ProductForm) {
-    const values = {
+    const values: Product = {
       ...data,
+      id: uuidv4(),
       value: Number(data.value.replace(',', '.')),
     }
     console.log(values)
+
+    addProduct(values)
 
     toast.success('Produto cadastrado com sucesso!', {
       cancel: {

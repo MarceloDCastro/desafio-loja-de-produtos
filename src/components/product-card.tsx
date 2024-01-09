@@ -1,4 +1,3 @@
-import { Product } from '@/app/(app)/page'
 import {
   Card,
   CardContent,
@@ -9,6 +8,7 @@ import {
 } from './ui/card'
 import { Button } from './ui/button'
 import { Plus } from 'lucide-react'
+import { Product } from '@/contexts/product-list'
 
 interface ProductCardProps {
   product: Product
