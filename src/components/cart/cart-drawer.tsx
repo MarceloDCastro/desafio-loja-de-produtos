@@ -24,9 +24,9 @@ export function CartDrawer() {
         <Button variant="ghost" className="rounded-full p-0 h-10 w-10 relative">
           <div>
             {!!totalItems && (
-              <span className="py-0.5 px-1 bg-red-500 rounded-full text-xs absolute left-7 top-0">
-                {totalItems}
-              </span>
+              <div className="h-5 min-w-5 px-1 bg-red-500 rounded-full absolute left-7 top-0">
+                <span className="text-xs">{totalItems}</span>
+              </div>
             )}
             <ShoppingCart className={'h-5 w-5'} />
           </div>

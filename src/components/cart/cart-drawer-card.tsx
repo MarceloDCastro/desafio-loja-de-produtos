@@ -104,7 +104,9 @@ function RemoveFromCartButton({ product }: { product: Product }) {
 function TotalValue({ totalValue }: { totalValue: number }) {
   return (
     <div>
-      <span className="text-sm font-medium leading-none block mb-3">Total</span>
+      <span className="text-sm font-medium leading-none block mb-2.5">
+        Total
+      </span>
       <span>
         {totalValue.toLocaleString('pt-BR', {
           style: 'currency',

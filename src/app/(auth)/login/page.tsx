@@ -7,11 +7,15 @@ import Link from 'next/link'
 export default async function Login() {
   return (
     <div className="flex flex-col items-center justify-center h-[calc(100vh-128px)]">
-      <div className="rounded-lg border bg-card text-card-foreground shadow-sm w-[80vw] lg:w-[50vw] min-w-[340px] max-w-[700px] px-10 py-6 space-y-8">
+      <div className="rounded-lg border bg-card text-card-foreground shadow-sm w-[80vw] lg:w-[50vw] min-w-[340px] max-w-[700px] px-10 py-6 space-y-6">
         <div className="flex gap-4 items-center justify-center">
           <ShoppingBag className="w-8 h-8" />
           <h1 className="text-3xl font-bold tracking-tight">Loja</h1>
         </div>
+
+        <span className="text-muted-foreground text-center block">
+          Seja bem-vindo(a)!
+        </span>
 
         <div className="flex flex-col justify-center items-center space-y-4">
           <Link href="/">
