@@ -56,8 +56,8 @@ export function CartDrawer() {
       </DrawerTrigger>
 
       <DrawerContent className="pb-5 px-5 md:px-20 xl:px-30 2xl:px-[200px]">
-        <DrawerHeader className="border-b pb-1 mb-3">
-          <div className="flex justify-between items-center gap-2">
+        <DrawerHeader>
+          <div className="flex justify-between items-center gap-2 border-b pb-1">
             <DrawerTitle className="flex items-center gap-2">
               <ShoppingCart className="w-6 h-6" />{' '}
               <span className="text-xl">Carrinho</span>{' '}
@@ -73,7 +73,7 @@ export function CartDrawer() {
           </div>
 
           {!totalItems && (
-            <DrawerDescription className="mt-2">
+            <DrawerDescription>
               Você não possui itens adicionados ao carrinho.
             </DrawerDescription>
           )}
