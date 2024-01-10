@@ -1,6 +1,8 @@
 'use client'
 
 import { ReactNode, createContext, useContext, useState } from 'react'
+import { toast } from 'sonner'
+import { Product } from './product-context'
 
 export interface CartItem {
   productId: string
@@ -9,8 +11,8 @@ export interface CartItem {
 
 interface CartContextType {
   items: CartItem[]
-  addToCart: (productId: string) => void
-  removeFromCart: (productId: string) => void
+  addToCart: (product: Product) => void
+  removeFromCart: (product: Product) => void
   increaseQuantity: (productId: string) => void
   decreaseQuantity: (productId: string) => void
 }
@@ -20,7 +22,9 @@ const CartContext = createContext({} as CartContextType)
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
 
-  function addToCart(productId: string) {
+  function addToCart(product: Product) {
+    const { id: productId, name: productName } = product
+
     setCartItems((state) => {
       const productInCart = state.some(
         (product) => product.productId === productId,
@@ -37,9 +41,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
       return [...state, { productId, quantity: 1 }]
     })
+    toast.success(`${productName} adicionado ao carrinho`)
   }
 
-  function removeFromCart(productId: string) {
+  function removeFromCart(product: Product) {
+    const { id: productId, name: productName } = product
+
     setCartItems((state) => {
       const itemsCopy = [...state]
       const productIndex = itemsCopy.findIndex(
@@ -50,6 +57,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
       return itemsCopy
     })
+    toast.success(`${productName} removido do carrinho`)
   }
 
   function increaseQuantity(productId: string) {

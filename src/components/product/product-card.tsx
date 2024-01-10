@@ -33,7 +33,7 @@ export function ProductCard({ product }: ProductCardProps) {
         <span className="block">{handledValue}</span>
       </CardContent>
       <CardFooter>
-        <AddToCartButton productId={product.id} />
+        <AddToCartButton product={product} />
       </CardFooter>
     </Card>
   )

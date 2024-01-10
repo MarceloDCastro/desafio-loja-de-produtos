@@ -12,7 +12,7 @@ import {
 } from '../ui/card'
 import { Label } from '../ui/label'
 import { CartItem, useCart } from '@/contexts/cart-context'
-import { useProductList } from '@/contexts/product-context'
+import { Product, useProductList } from '@/contexts/product-context'
 
 interface CartDrawerCard {
   cartItem: CartItem
@@ -23,7 +23,9 @@ export function CartDrawerCard({ cartItem }: CartDrawerCard) {
 
   const { productId, quantity } = cartItem
 
-  const product = productList.find((product) => product.id === productId)
+  const product = productList.find(
+    (product) => product.id === productId,
+  ) as Product
 
   const handledValue = product?.value.toLocaleString('pt-BR', {
     style: 'currency',
@@ -39,10 +41,10 @@ export function CartDrawerCard({ cartItem }: CartDrawerCard) {
     >
       <CardHeader className="pb-2">
         <CardTitle className="max-h-[60px] custom-ellipsis text-xl">
-          {product?.name}
+          {product.name}
         </CardTitle>
         <CardDescription className="max-h-[70px] custom-ellipsis">
-          {product?.description}
+          {product.description}
         </CardDescription>
       </CardHeader>
       <CardContent className="flex-1 pb-3">
@@ -50,7 +52,7 @@ export function CartDrawerCard({ cartItem }: CartDrawerCard) {
       </CardContent>
       <CardFooter className="justify-between items-center border-t py-2">
         <ProductQuantity quantity={quantity} productId={productId} />
-        <RemoveFromCartButton productId={productId} />
+        <RemoveFromCartButton product={product} />
         <TotalValue totalValue={totalValue} />
       </CardFooter>
     </Card>
@@ -85,14 +87,14 @@ function ProductQuantity({ quantity, productId }: CartItem) {
   )
 }
 
-function RemoveFromCartButton({ productId }: { productId: string }) {
+function RemoveFromCartButton({ product }: { product: Product }) {
   const { removeFromCart } = useCart()
 
   return (
     <Button
       variant="ghost"
       className="text-red-500 rounded-full p-0 h-10 w-10 mt-auto mr-auto ml-2"
-      onClick={() => removeFromCart(productId)}
+      onClick={() => removeFromCart(product)}
     >
       <Trash className="w-5 h-5" />
     </Button>
