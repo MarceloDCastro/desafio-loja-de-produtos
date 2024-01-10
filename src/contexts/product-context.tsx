@@ -1,6 +1,7 @@
 'use client'
 
 import { createContext, useContext, useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 export interface Product {
   id: string
@@ -11,41 +12,53 @@ export interface Product {
 
 const productListInitialValue: Product[] = [
   {
-    id: '1',
-    name: 'Camisa regata branca com azul escuro',
+    id: uuidv4(),
+    name: 'Camiseta regata branca',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis voluptas enim tenetur, dolores aut quae maxime est cupiditate fugiat. Itaque recusandae aspernatur veritatis quas. Molestias a accusantium modi quod odit.',
-    value: 99.99,
+      'A clássica camiseta regata branca, perfeita para dias ensolarados. Feita com algodão macio e confortável, é uma escolha elegante e versátil para qualquer ocasião.',
+    value: 59.99,
   },
   {
-    id: '2',
-    name: 'Product 2',
-    description: 'Description 2',
-    value: 20,
+    id: uuidv4(),
+    name: 'Camiseta regata preta',
+    description:
+      'Uma camiseta regata preta moderna e estilosa, ideal para eventos noturnos ou para adicionar um toque de sofisticação ao seu visual diário.',
+    value: 59.99,
   },
   {
-    id: '3',
-    name: 'Product 3',
-    description: 'Description 3',
-    value: 30,
+    id: uuidv4(),
+    name: 'Camiseta básica amarela',
+    description:
+      'Esta camiseta básica amarela é perfeita para dar um toque de cor ao seu guarda-roupa. Feita com material de alta qualidade, é confortável e vibrante.',
+    value: 64.99,
   },
   {
-    id: '4',
-    name: 'Product 4',
-    description: 'Description 4',
-    value: 40,
+    id: uuidv4(),
+    name: 'Camiseta básica cinza',
+    description:
+      'Uma camiseta básica na cor cinza, versátil e fácil de combinar. Confeccionada com tecido macio, proporcionando conforto durante todo o dia.',
+    value: 64.99,
   },
   {
-    id: '5',
-    name: 'Product 5',
-    description: 'Description 5',
-    value: 50,
+    id: uuidv4(),
+    name: 'Camiseta esportiva azul',
+    description:
+      'Camiseta esportiva azul projetada para oferecer máximo desempenho durante atividades físicas. Respirável, leve e estilosa para qualquer prática esportiva.',
+    value: 79.99,
   },
   {
-    id: '6',
-    name: 'Product 6',
-    description: 'Description 6',
-    value: 60,
+    id: uuidv4(),
+    name: 'Camiseta esportiva verde',
+    description:
+      'Com design moderno, esta camiseta esportiva verde é perfeita para os amantes de atividades ao ar livre. Confortável, resistente e cheia de estilo.',
+    value: 79.99,
+  },
+  {
+    id: uuidv4(),
+    name: 'Camiseta esportiva vermelha',
+    description:
+      'Uma camiseta esportiva vibrante na cor vermelha, oferecendo tanto estilo quanto funcionalidade. Ideal para se destacar durante seus treinos e atividades físicas.',
+    value: 79.99,
   },
 ]
 
