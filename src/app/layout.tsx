@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
 import { Toaster } from '@/components/ui/sonner'
 import { SessionProvider } from '@/providers/session-provider'
-import ProductListProvider from '@/contexts/product-list'
+import ProductListProvider from '@/contexts/product-context'
 import { CartProvider } from '@/contexts/cart-context'
 
 const inter = Inter({ subsets: ['latin'] })

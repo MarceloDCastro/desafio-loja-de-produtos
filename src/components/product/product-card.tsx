@@ -5,9 +5,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from './ui/card'
-import { Product } from '@/contexts/product-list'
-import { AddToCartButton } from './add-to-cart-button'
+} from '../ui/card'
+import { Product } from '@/contexts/product-context'
+import { AddToCartButton } from '../cart/add-to-cart-button'
 
 interface ProductCardProps {
   product: Product

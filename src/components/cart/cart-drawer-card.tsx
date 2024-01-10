@@ -12,7 +12,7 @@ import {
 } from '../ui/card'
 import { Label } from '../ui/label'
 import { CartItem, useCart } from '@/contexts/cart-context'
-import { useProductList } from '@/contexts/product-list'
+import { useProductList } from '@/contexts/product-context'
 
 interface CartDrawerCard {
   cartItem: CartItem

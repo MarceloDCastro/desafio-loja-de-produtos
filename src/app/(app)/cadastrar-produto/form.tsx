@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Product, useProductList } from '@/contexts/product-list'
+import { Product, useProductList } from '@/contexts/product-context'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Label } from '@radix-ui/react-label'
 import { Plus, Undo2 } from 'lucide-react'

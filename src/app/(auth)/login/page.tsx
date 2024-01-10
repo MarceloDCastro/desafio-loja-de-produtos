@@ -1,4 +1,4 @@
-import { SignInButton } from '@/components/signin-button'
+import { SignInButton } from '@/components/auth/signin-button'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { ShoppingBag, User } from 'lucide-react'
