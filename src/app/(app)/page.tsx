@@ -1,4 +1,9 @@
+import { Metadata } from 'next'
 import { ProductList } from '../../components/product/product-list'
+
+export const metadata: Metadata = {
+  title: 'Produtos',
+}
 
 export default function Home() {
   return (

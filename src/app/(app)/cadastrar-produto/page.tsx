@@ -9,6 +9,11 @@ import { ProductForm } from './form'
 import { getServerSession } from 'next-auth'
 import { nextAuthOptions } from '@/lib/next-auth-options'
 import { redirect } from 'next/navigation'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Cadastrar produto',
+}
 
 export default async function RegisterProduct() {
   const session = await getServerSession(nextAuthOptions)

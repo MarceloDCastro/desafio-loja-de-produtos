@@ -2,7 +2,12 @@ import { SignInButton } from '@/components/auth/signin-button'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { ShoppingBag, User } from 'lucide-react'
+import { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Login',
+}
 
 export default async function Login() {
   return (
