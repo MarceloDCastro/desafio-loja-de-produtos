@@ -12,11 +12,33 @@ import {
 } from '../ui/drawer'
 import { useCart } from '@/contexts/cart-context'
 import { CartDrawerCard } from './cart-drawer-card'
+import { Product, useProductList } from '@/contexts/product-context'
 
 export function CartDrawer() {
   const { items } = useCart()
+  const { productList } = useProductList()
 
-  const totalItems = items.reduce((acc, item) => acc + item.quantity, 0)
+  const { totalItems, totalValue } = items.reduce(
+    (acc, item) => {
+      const product = productList.find(
+        (product) => product.id === item.productId,
+      ) as Product
+
+      return {
+        totalItems: acc.totalItems + item.quantity,
+        totalValue: acc.totalValue + item.quantity * product.value,
+      }
+    },
+    {
+      totalItems: 0,
+      totalValue: 0,
+    },
+  )
+
+  const handledTotalValue = totalValue.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  })
 
   return (
     <Drawer>
@@ -34,14 +56,21 @@ export function CartDrawer() {
       </DrawerTrigger>
 
       <DrawerContent className="pb-5 px-5 md:px-20 xl:px-30 2xl:px-[200px]">
-        <DrawerHeader>
-          <DrawerTitle className="flex items-center gap-2">
-            <ShoppingCart className="w-6 h-6" />{' '}
-            <span className="text-xl">Carrinho</span>{' '}
-            <span className="text-lg text-muted-foreground">
-              ({totalItems})
-            </span>
-          </DrawerTitle>
+        <DrawerHeader className="border-b pb-1 mb-3">
+          <div className="flex justify-between items-center gap-2">
+            <DrawerTitle className="flex items-center gap-2">
+              <ShoppingCart className="w-6 h-6" />{' '}
+              <span className="text-xl">Carrinho</span>{' '}
+              <span className="text-lg text-muted-foreground">
+                ({totalItems})
+              </span>
+            </DrawerTitle>
+
+            <div>
+              <span className="block">Valor total</span>
+              <span className="block">{handledTotalValue}</span>
+            </div>
+          </div>
 
           {!totalItems && (
             <DrawerDescription className="mt-2">
@@ -50,7 +79,7 @@ export function CartDrawer() {
           )}
         </DrawerHeader>
 
-        <div className="grid grid-cols-6 gap-5 md:gap-12 2xl:gap-16 overflow-y-auto max-h-[calc(100vh-180px)] px-3">
+        <div className="grid grid-cols-6 gap-5 md:gap-12 2xl:gap-16 overflow-y-auto max-h-[calc(100vh-200px)] px-3">
           {items.map((cartItem) => (
             <CartDrawerCard key={cartItem.productId} cartItem={cartItem} />
           ))}
