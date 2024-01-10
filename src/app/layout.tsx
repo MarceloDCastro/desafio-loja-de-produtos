@@ -4,6 +4,7 @@ import '@/styles/globals.css'
 import { Toaster } from '@/components/ui/sonner'
 import { SessionProvider } from '@/providers/session-provider'
 import ProductListProvider from '@/contexts/product-list'
+import { CartProvider } from '@/contexts/cart-context'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,8 +23,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <SessionProvider>
           <ProductListProvider>
-            <Toaster />
-            {children}
+            <CartProvider>
+              <Toaster />
+              {children}
+            </CartProvider>
           </ProductListProvider>
         </SessionProvider>
       </body>

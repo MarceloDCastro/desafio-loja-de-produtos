@@ -6,9 +6,8 @@ import {
   CardHeader,
   CardTitle,
 } from './ui/card'
-import { Button } from './ui/button'
-import { Plus } from 'lucide-react'
 import { Product } from '@/contexts/product-list'
+import { AddToCartButton } from './add-to-cart-button'
 
 interface ProductCardProps {
   product: Product
@@ -34,9 +33,7 @@ export function ProductCard({ product }: ProductCardProps) {
         <span className="block">{handledValue}</span>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">
-          <Plus className="mr-2 h-4 w-4" /> Adicionar ao carrinho
-        </Button>
+        <AddToCartButton productId={product.id} />
       </CardFooter>
     </Card>
   )

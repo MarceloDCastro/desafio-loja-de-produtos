@@ -5,6 +5,7 @@ import { ShoppingBag } from 'lucide-react'
 import { UserArea } from '@/components/user-area'
 import { getServerSession } from 'next-auth'
 import { nextAuthOptions } from '../api/auth/[...nextauth]/route'
+import { CartDrawer } from '@/components/cart/cart-drawer'
 
 export default async function AppLayout({ children }: { children: ReactNode }) {
   const session = await getServerSession(nextAuthOptions)
@@ -28,7 +29,8 @@ export default async function AppLayout({ children }: { children: ReactNode }) {
           </nav>
         </div>
 
-        <div>
+        <div className="flex gap-6">
+          <CartDrawer />
           <UserArea />
         </div>
       </header>
