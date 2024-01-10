@@ -7,7 +7,7 @@ import {
 } from '@/components/ui/card'
 import { ProductForm } from './form'
 import { getServerSession } from 'next-auth'
-import { nextAuthOptions } from '@/app/api/auth/[...nextauth]/route'
+import { nextAuthOptions } from '@/lib/next-auth-options'
 import { redirect } from 'next/navigation'
 
 export default async function RegisterProduct() {

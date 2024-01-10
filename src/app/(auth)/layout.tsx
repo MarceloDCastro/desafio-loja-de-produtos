@@ -1,7 +1,7 @@
 import { getServerSession } from 'next-auth'
 import { redirect } from 'next/navigation'
 
-import { nextAuthOptions } from '../api/auth/[...nextauth]/route'
+import { nextAuthOptions } from '@/lib/next-auth-options'
 
 interface AuthLayoutProps {
   children: React.ReactNode

@@ -4,8 +4,8 @@ import { ReactNode } from 'react'
 import { ShoppingBag } from 'lucide-react'
 import { UserArea } from '@/components/auth/user-area'
 import { getServerSession } from 'next-auth'
-import { nextAuthOptions } from '../api/auth/[...nextauth]/route'
 import { CartDrawer } from '@/components/cart/cart-drawer'
+import { nextAuthOptions } from '@/lib/next-auth-options'
 
 export default async function AppLayout({ children }: { children: ReactNode }) {
   const session = await getServerSession(nextAuthOptions)
