@@ -1,6 +1,6 @@
-# [Desafio] Loja de Produtos 🛍️
+# Loja de Produtos 🛍️
 
-![Loja de produtos](/.github/layout.png)
+![Loja de produtos](/.github/screenshot.png)
 
 ## 💻 Sobre
 
@@ -22,6 +22,8 @@ A aplicação foi desenvolvida utilizando as seguintes tecnologias:
 - [NextAuth.js](https://next-auth.js.org/)
 - [Shadcn](https://ui.shadcn.com/)
 - [Lucide](https://lucide.dev/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Zod](https://zod.dev/)
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 - [Vercel](https://vercel.com)
@@ -29,33 +31,32 @@ A aplicação foi desenvolvida utilizando as seguintes tecnologias:
 ## ✨ Features
 
 
-Algumas features que valem a pena destacar:
+Principais features da aplicação:
 
-✔ Autenticação com Google
-✔ Cadastro de produtos
-✔ Carrinho de compras
-✔ Bloqueio de rotas
-✔ Validações de formulário
-✔ Notificações
+- Autenticação com Google
+- Cadastro de produtos
+- Carrinho de compras
+- Bloqueio de rotas
+- Validações de formulário
+- Notificações
 
 ## 🧑‍💻 Manual de Desenvolvimento
 
-
-Foi utilizado o [PNPM](https://pnpm.io/pt/) como gerenciador de pacotes padrão
+- Você precisará do [Node.js](https://nodejs.org) instalado em seu computador para rodar esta aplicação.
+- Foi utilizado o [PNPM](https://pnpm.io/pt/) como gerenciador de pacotes padrão
 
 ### Rodando a Aplicação
 
 
-Para executar o projeto, siga os passos abaixo:
+Para executar o projeto, siga os passos abaixo:</br>
 
-- Clonando o projeto
+1 - Clonando o projeto.
 
 ```bash
   git clone https://github.com/MarceloDCastro/desafio-loja-de-produtos.git
 ```
 
-- Crie um arquivo .env na pasta raiz do projeto
-- Consiga as variáveis do Google seguindo a [documentação](https://next-auth.js.org/providers/google)
+2 - Crie um arquivo .env na pasta raiz do projeto. Para conseguir as variáveis do Google, siga a [documentação](https://next-auth.js.org/providers/google).
 
 ```bash
   NEXT_PUBLIC_AUTH_SECRET=SEU_SEGREDO
@@ -63,19 +64,19 @@ Para executar o projeto, siga os passos abaixo:
   GOOGLE_CLIENT_SECRET=VARIAVEL_AQUI
 ```
 
-- Instalando as dependências
+3 - Instalando as dependências.
 
 ```bash
   pnpm i
 ```
 
-- Execute a aplicação
+4 - Execute a aplicação.
 
 ```bash
   pnpm dev
 ```
 
-- Abra [http://localhost:3000](http://localhost:3000) em seu navegador para acessar a aplicação
+5 - Abra [http://localhost:3000](http://localhost:3000) em seu navegador para acessar a aplicação.
 
 ### Contribuindo com a Aplicação
 
@@ -89,7 +90,7 @@ Para executar o projeto, siga os passos abaixo:
 
 Foi utilizada a convenção abordada na documentação do [Conventional Commits](https://www.conventionalcommits.org)
 
-Padrão: `[tipo]: [descrição]`
+Padrão: `[tipo]: [descrição]`</br>
 Exemplo: `feat: shopping cart`
 
 - Tipos
@@ -104,7 +105,7 @@ Exemplo: `feat: shopping cart`
   - `chore`: Atualizações de tarefas de build, configurações de administrador, pacotes, etc.
   - `ci`: Mudanças relacionadas a integração contínua.
   - `raw`: Mudanças relacionadas a arquivos de configurações, dados, features, parametros.
-  - `revert`: Reverão de um commit anterior
+  - `revert`: Reversão de um commit anterior
 
 ### Comandos principais
 
@@ -114,4 +115,3 @@ Exemplo: `feat: shopping cart`
 - `pnpm build` gera a versão estática da aplicação
 - `pnpm start` inicia o servidor de desenvolvimento local
 - `pnpm lint` busca por problemas de formatação e inconsistências
-
