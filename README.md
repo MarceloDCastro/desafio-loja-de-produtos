@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [Desafio] Loja de Produtos 🛍️
 
-## Getting Started
+![Loja de produtos](/.github/layout.png)
 
-First, run the development server:
+## 💻 Sobre
+
+
+Projeto desenvolvido em React, empregando o framework Next.js. A essência da aplicação é uma loja de produtos, contendo diversas funcionalidades como autenticação de usuário, cadastro de produtos e um sistema de carrinho de compras.
+
+O deploy da aplicação foi feito na Vercel, e está disponível neste [endereço](https://desafio-loja-de-produtos.vercel.app/).
+
+## 🚀 Tecnologias
+
+
+A aplicação foi desenvolvida utilizando as seguintes tecnologias:
+
+- [React.js](https://react.dev/)
+- [Next.js](https://nextjs.org/) em sua versão `14.0.4`
+- [App Router](https://nextjs.org/docs/app)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind](https://tailwindcss.com/)
+- [NextAuth.js](https://next-auth.js.org/)
+- [Shadcn](https://ui.shadcn.com/)
+- [Lucide](https://lucide.dev/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Vercel](https://vercel.com)
+
+## ✨ Features
+
+
+Algumas features que valem a pena destacar:
+
+✔ Autenticação com Google
+✔ Cadastro de produtos
+✔ Carrinho de compras
+✔ Bloqueio de rotas
+✔ Validações de formulário
+✔ Notificações
+
+## 🧑‍💻 Manual de Desenvolvimento
+
+
+Foi utilizado o [PNPM](https://pnpm.io/pt/) como gerenciador de pacotes padrão
+
+### Rodando a Aplicação
+
+
+Para executar o projeto, siga os passos abaixo:
+
+- Clonando o projeto
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/MarceloDCastro/desafio-loja-de-produtos.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Crie um arquivo .env na pasta raiz do projeto
+- Consiga as variáveis do Google seguindo a [documentação](https://next-auth.js.org/providers/google)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  NEXT_PUBLIC_AUTH_SECRET=SEU_SEGREDO
+  GOOGLE_CLIENT_ID=VARIAVEL_AQUI
+  GOOGLE_CLIENT_SECRET=VARIAVEL_AQUI
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Instalando as dependências
 
-## Learn More
+```bash
+  pnpm i
+```
 
-To learn more about Next.js, take a look at the following resources:
+- Execute a aplicação
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+  pnpm dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Abra [http://localhost:3000](http://localhost:3000) em seu navegador para acessar a aplicação
 
-## Deploy on Vercel
+### Contribuindo com a Aplicação
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Crie um fork do projeto
+- Siga os passos acima
+- Faça pull requests para a branch `develop`
+
+### Padrão de Commit
+
+
+Foi utilizada a convenção abordada na documentação do [Conventional Commits](https://www.conventionalcommits.org)
+
+Padrão: `[tipo]: [descrição]`
+Exemplo: `feat: shopping cart`
+
+- Tipos
+  - `feat`: Inclusão de um novo recurso.
+  - `fix`: Soluçao de um problema (bug fix).
+  - `docs`: Mudanças na documentação.
+  - `test`: Alterações em testes, seja criando, alterando ou excluindo testes unitários.
+  - `build`: Modificações em arquivos de build e dependências.
+  - `perf`: Alterações de código relacionadas a performance.
+  - `style`: Alterações referentes a formatações de código, lint, etc.
+  - `refactor`: Refatorações que não alterem sua funcionalidade.
+  - `chore`: Atualizações de tarefas de build, configurações de administrador, pacotes, etc.
+  - `ci`: Mudanças relacionadas a integração contínua.
+  - `raw`: Mudanças relacionadas a arquivos de configurações, dados, features, parametros.
+  - `revert`: Reverão de um commit anterior
+
+### Comandos principais
+
+
+- `pnpm i` instala as dependências do projeto
+- `pnpm dev` executa a aplicação em modo de desenvolvimento
+- `pnpm build` gera a versão estática da aplicação
+- `pnpm start` inicia o servidor de desenvolvimento local
+- `pnpm lint` busca por problemas de formatação e inconsistências
+
